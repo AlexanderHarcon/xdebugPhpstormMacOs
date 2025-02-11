@@ -6,11 +6,13 @@
    1. Після встановлення, знайдіть конфігураційний файл Xdebug. Зазвичай він знаходиться в /opt/homebrew/etc/php/8.3/conf.d/99-xdebug.ini.
    2. Відкрийте конфігураційний файл для редагування: nano /opt/homebrew/etc/php/8.3/conf.d/99-xdebug.ini
    3. Додайте або змініть наступні налаштування:
+      ```
       zend_extension="xdebug.so"
       xdebug.mode=debug
       xdebug.start_with_request=yes
       xdebug.client_host=127.0.0.1
       xdebug.client_port=9003
+      ```
    4. Збережіть файл і перезапустіть веб-сервер, якщо він працює.
 3. Налаштування PHPStorm
    1. Відкрийте PHPStorm.
