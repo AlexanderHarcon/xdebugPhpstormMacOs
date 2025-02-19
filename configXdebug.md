@@ -62,17 +62,22 @@ FAQ по помилкам
 5. Помилка: discover client host: is OFF
    Рішення:
 Відкрийте файл конфігурації Xdebug. Наприклад, ви можете використовувати nano з терміналу: sudo nano /opt/homebrew/etc/php/8.3/conf.d/99-xdebug.ini
-Додайте або змініть рядок у конфігураційному файлі, щоб увімкнути xdebug.discover_client_host: xdebug.discover_client_host = 1
+Додайте або змініть рядок у конфігураційному файлі, щоб увімкнути xdebug.discover_client_host: 
+```
+xdebug.discover_client_host = 1
+```
 Збережіть файл і вийдіть з редактора (Control + O, потім Enter для збереження і Control + X для виходу в nano).
-6. Перевірка налаштувань відлагоджувача на веб-сервері
+7. Перевірка налаштувань відлагоджувача на веб-сервері
    1. Створіть тестовий файл info.php з наступним вмістом: <?php phpinfo(); 
    2. Завантажте info.php у кореневу директорію вашого веб-сервера.
    3. Відкрийте URL, де знаходиться ваш файл, наприклад, http://localhost/info.php.
    4. Знайдіть розділ Xdebug у виведенні phpinfo().
    5. Перевірте важливі налаштування
+     ```
       xdebug.remote_enable = On
       xdebug.client_host = 127.0.0.1 (або інший відповідний IP)
       xdebug.client_port = 9003
+     ```
    6. Скопіюйте всю сторінку info.php та вставте за адресою:
       PhpStorm -> Settings(cmd + ,) -> Debug -> Validate(У відкритому вікні вставте скопійований текс в розділ Output phpinfo())-> Validate 
 
